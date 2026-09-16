@@ -1,0 +1,20 @@
+{
+  "name": "atividade-02-api-data-hora",
+  "version": "1.0.0",
+  "description": "API Express de consulta de data e hora com frontend consumidor.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "render"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

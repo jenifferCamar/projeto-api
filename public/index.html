@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend consumidor da API Express de data e hora." />
+    <title>API de Data e Hora | Atividade 02</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Página inicial">
+          <span class="brand-mark">⌁</span>
+          <span>atividade<span class="brand-accent">.02</span></span>
+        </a>
+        <span class="status-pill"><span class="status-dot"></span> Express API online</span>
+      </header>
+
+      <section class="hero">
+        <div class="eyebrow">AULA 04 / CONSUMO DE API</div>
+        <h1>O tempo, servido<br /><em>por uma API.</em></h1>
+        <p class="hero-copy">Uma aplicação frontend consulta uma rota criada com Express e apresenta a data e a hora atualizadas no fuso de São Paulo.</p>
+        <div class="hero-actions">
+          <button class="primary-button" id="refresh-button" type="button">
+            <span class="button-icon">↻</span> Consultar agora
+          </button>
+          <a class="text-link" href="/api/data-hora" target="_blank" rel="noreferrer">Ver resposta JSON ↗</a>
+        </div>
+      </section>
+
+      <section class="clock-card" aria-live="polite">
+        <div class="card-topline">
+          <span class="live-label"><span class="pulse"></span> DADO RECEBIDO DA API</span>
+          <span class="endpoint">GET /api/data-hora</span>
+        </div>
+        <div class="time-display" id="time-display">--:--:--</div>
+        <div class="date-display" id="date-display">Consultando servidor...</div>
+        <div class="card-footer">
+          <span>Fuso horário: <strong id="timezone">--</strong></span>
+          <span id="last-update">Aguardando primeira consulta</span>
+        </div>
+      </section>
+
+      <section class="details-grid">
+        <article class="detail-card">
+          <div class="detail-number">01</div>
+          <h2>Uma rota clara</h2>
+          <p>A API responde em <code>GET /api/data-hora</code> com data, hora, fuso horário e timestamp em JSON.</p>
+        </article>
+        <article class="detail-card">
+          <div class="detail-number">02</div>
+          <h2>Frontend conectado</h2>
+          <p>O navegador usa <code>fetch()</code> para consultar o backend e atualizar a interface sem recarregar a página.</p>
+        </article>
+        <article class="detail-card accent-card">
+          <div class="detail-number">03</div>
+          <h2>Pronto para Render</h2>
+          <p>O projeto usa a variável de ambiente <code>PORT</code> e possui um <code>render.yaml</code> para publicação.</p>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <span>Projeto acadêmico • Desenvolvimento Web</span>
+        <span id="connection-status">Conectando...</span>
+      </footer>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
