@@ -48,6 +48,7 @@ async function run() {
     assert.strictEqual(page.status, 200);
     assert.match(page.body, /styles\.css/);
     assert.match(page.body, /app\.js/);
+    assert.match(page.body, /id="api-link"/);
     assert.strictEqual(css.status, 200);
     assert.match(css.headers['content-type'], /text\/css/);
     assert.match(css.body, /--teal/);
