@@ -38,6 +38,8 @@ async function run() {
     const health = await request('/health');
     const api = await request('/api/data-hora');
     const page = await request('/');
+    const css = await request('/styles.css');
+    const javascript = await request('/app.js');
 
     assert.strictEqual(health.status, 200);
     assert.strictEqual(JSON.parse(health.body).status, 'ok');
@@ -46,6 +48,12 @@ async function run() {
     assert.strictEqual(page.status, 200);
     assert.match(page.body, /styles\.css/);
     assert.match(page.body, /app\.js/);
+    assert.strictEqual(css.status, 200);
+    assert.match(css.headers['content-type'], /text\/css/);
+    assert.match(css.body, /--teal/);
+    assert.strictEqual(javascript.status, 200);
+    assert.match(javascript.headers['content-type'], /javascript/);
+    assert.match(javascript.body, /fetch\('\/api\/data-hora'/);
     console.log('Smoke test aprovado: API, frontend e assets respondem corretamente.');
   } finally {
     server.kill();
