@@ -24,7 +24,7 @@ Se usar a extensao Live Server no VS Code, mantenha o Express rodando com `npm s
 
 1. Suba este projeto para um repositório no GitHub.
 2. No Render, selecione **New > Web Service** e conecte o repositório.
-3. Use `npm install` no campo **Build Command** e `npm start` no campo **Start Command**.
+3. Use `npm ci` no campo **Build Command** e `npm start` no campo **Start Command**.
 4. O arquivo `render.yaml` já deixa essa configuração registrada para o Blueprint.
 5. Após o deploy, a interface ficará disponível na URL gerada pelo Render; a API estará em `/api/data-hora`.
 
