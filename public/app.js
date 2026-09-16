@@ -54,3 +54,4 @@ async function loadDateTime() {
 
 refreshButton.addEventListener('click', loadDateTime);
 loadDateTime();
+setInterval(loadDateTime, 60_000);
