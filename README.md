@@ -11,6 +11,8 @@ npm start
 
 Depois, abra `http://localhost:3000`.
 
+O CSS e o JavaScript sao carregados como arquivos estaticos relativos a pagina. Assim, o frontend funciona tanto na raiz publicada pelo Express quanto quando a pagina e revisada dentro da pasta `public`.
+
 ## Rotas
 
 - `GET /api/data-hora`: retorna a data, hora, fuso horário e timestamp em JSON.
@@ -23,3 +25,11 @@ Depois, abra `http://localhost:3000`.
 3. Use `npm install` no campo **Build Command** e `npm start` no campo **Start Command**.
 4. O arquivo `render.yaml` já deixa essa configuração registrada para o Blueprint.
 5. Após o deploy, a interface ficará disponível na URL gerada pelo Render; a API estará em `/api/data-hora`.
+
+### Verificação pós-deploy
+
+Use estas URLs para conferir o serviço:
+
+- `https://SEU-SERVICO.onrender.com/` para a interface.
+- `https://SEU-SERVICO.onrender.com/api/data-hora` para o JSON da API.
+- `https://SEU-SERVICO.onrender.com/health` para o health check.
