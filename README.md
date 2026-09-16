@@ -13,6 +13,8 @@ Depois, abra `http://localhost:3000`.
 
 O CSS e o JavaScript sao carregados como arquivos estaticos relativos a pagina. Assim, o frontend funciona tanto na raiz publicada pelo Express quanto quando a pagina e revisada dentro da pasta `public`.
 
+Se usar a extensao Live Server no VS Code, mantenha o Express rodando com `npm start`. A interface identifica a porta `5501` e consulta automaticamente a API em `http://localhost:3000`.
+
 ## Rotas
 
 - `GET /api/data-hora`: retorna a data, hora, fuso horário e timestamp em JSON.
