@@ -36,6 +36,7 @@ function getDateTime() {
 }
 
 app.get('/api/data-hora', (_req, res) => {
+  res.set('Cache-Control', 'no-store');
   res.json({
     sucesso: true,
     mensagem: 'Data e hora consultadas com sucesso.',
