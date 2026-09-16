@@ -4,6 +4,10 @@ const dateDisplay = document.querySelector('#date-display');
 const timezoneDisplay = document.querySelector('#timezone');
 const lastUpdate = document.querySelector('#last-update');
 const connectionStatus = document.querySelector('#connection-status');
+const isLiveServer = ['5500', '5501'].includes(window.location.port);
+const API_BASE_URL = window.location.protocol === 'file:' || isLiveServer
+  ? 'http://localhost:3000'
+  : '';
 
 function setLoading(isLoading) {
   refreshButton.disabled = isLoading;
@@ -26,7 +30,7 @@ async function loadDateTime() {
   connectionStatus.textContent = 'Consultando a API...';
 
   try {
-    const response = await fetch('/api/data-hora', {
+    const response = await fetch(`${API_BASE_URL}/api/data-hora`, {
       cache: 'no-store',
       headers: { Accept: 'application/json' }
     });

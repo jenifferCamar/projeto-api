@@ -53,7 +53,7 @@ async function run() {
     assert.match(css.body, /--teal/);
     assert.strictEqual(javascript.status, 200);
     assert.match(javascript.headers['content-type'], /javascript/);
-    assert.match(javascript.body, /fetch\('\/api\/data-hora'/);
+    assert.match(javascript.body, /api\/data-hora/);
     console.log('Smoke test aprovado: API, frontend e assets respondem corretamente.');
   } finally {
     server.kill();
