@@ -26,7 +26,10 @@ async function loadDateTime() {
   connectionStatus.textContent = 'Consultando a API...';
 
   try {
-    const response = await fetch('/api/data-hora', { headers: { Accept: 'application/json' } });
+    const response = await fetch('/api/data-hora', {
+      cache: 'no-store',
+      headers: { Accept: 'application/json' }
+    });
     if (!response.ok) throw new Error('A API retornou um erro.');
 
     const data = await response.json();
