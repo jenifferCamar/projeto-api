@@ -2,6 +2,8 @@
 
 Aplicação criada com Express e um frontend que consome a rota de data e hora.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https%3A%2F%2Fgithub.com%2FjenifferCamar%2Fprojeto-api)
+
 ## Executar localmente
 
 ```bash
@@ -22,11 +24,10 @@ Se usar a extensao Live Server no VS Code, mantenha o Express rodando com `npm s
 
 ## Deploy no Render
 
-1. Suba este projeto para um repositório no GitHub.
-2. No Render, selecione **New > Web Service** e conecte o repositório.
-3. Use `npm ci` no campo **Build Command** e `npm start` no campo **Start Command**.
-4. O arquivo `render.yaml` já deixa essa configuração registrada para o Blueprint.
-5. Após o deploy, a interface ficará disponível na URL gerada pelo Render; a API estará em `/api/data-hora`.
+1. Clique no botão **Deploy to Render** acima e entre na sua conta Render.
+2. Autorize a conexão com o repositório `jenifferCamar/projeto-api` e confirme a criação do Blueprint.
+3. O arquivo `render.yaml` aplicará `npm ci`, `npm start` e o health check `/health` automaticamente.
+4. Após o deploy, a interface ficará disponível na URL gerada pelo Render; a API estará em `/api/data-hora`.
 
 ### Verificação pós-deploy
 
